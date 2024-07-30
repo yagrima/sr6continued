@@ -19,10 +19,12 @@ export default class PlayerCharakterSheet extends ActorSheet {
       classes: ["shadowrun","sheet","scsheet"]
     });
   } 
-  getData(options) {
-    const basedata = super.getData(options);
+  getData() {
+    const basedata = super.getData();
     let sheetData = {};
+    console.log("Owner:"+this.actor.isOwner);
     sheetData.owner = this.actor.isOwner;
+    console.log("Editable:"+this.isEditable);
     sheetData.editable = this.isEditable;
     sheetData.actor = basedata.actor;
     sheetData.data = basedata.actor.system;
