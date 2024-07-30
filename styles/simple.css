@@ -1,0 +1,532 @@
+/* Farbschema: https://www.color-hex.com/color-palette/79506 */
+
+/* hide dropdown arrow */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+}
+/* make placeholder more opaque*/
+input::-webkit-input-placeholder {
+  color: #538898; /*Change the placeholder color*/
+  opacity: 0.3; /*Change the opacity between 0 and 1*/
+}
+
+@font-face {
+  font-family: 'masseffect';
+  src: url('me123.ttf'),
+        format('truetype');
+}
+@font-face{
+  font-family: 'me2';
+  src: url('slider.ttf'),
+  format('truetype');
+}
+.hide {
+  visibility: hidden;
+}
+.chat-message {
+  background: #f1f1f1;
+  font-family: slider,'masseffect','me2';
+}
+.tab{
+  font-family: slider,'masseffect','me2';
+}
+.spacer {
+  display: block;
+  height: 8px;
+}
+/* overwrite foundry standards */
+.directory .directory-list{
+  overflow: hidden;
+}
+.directory .directory-item.active {
+  border-color:#0eb9fe;
+  height: 56px;
+}
+li.hidden {
+  background-color: #f1f1f1;
+  color: #538898;
+  display: inherit;
+}
+li.defeated {
+  background-color: #f1f1f1;
+  color: #171614;
+  display: inherit;
+  text-decoration: line-through;
+  text-shadow: 0.1em 0.1em 0.05em #e61809;
+}
+.center {
+  text-align: center;
+}
+hr.lowmargin {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+hr.normalmargin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.masseffect {
+  font-family: slider,'masseffect','me2';
+  font-size: 12px;
+  background-color: 	#f1f1f1;
+  /* Sheet Tabs */
+  /* Items List */
+  /* Attributes */
+}
+.masseffect .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: auto;
+}
+.masseffect form {
+  height: 100%;
+}
+.masseffect .fullwidth {
+  min-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.masseffect .fullwidthspacer {
+  min-width: 500px;
+  width: 100%;
+  height: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.masseffect .halftab {
+  width: 49%;
+  display: inline-block;
+}
+.masseffect .sheet-header { 
+  display: flex;
+  flex: 0 0 90px; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 0px;
+}  
+.masseffect .sheet-header .headboxsmall {
+  background: transparent;
+  border: 1px solid;
+  height: 16px;
+  padding: 1px;
+  text-align: center;
+  width: 26px;
+}
+.masseffect .sheet-header .statusbar{
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  height: 16px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: bottom;
+  width: 480px;
+}  
+.masseffect .sheet-header .statusbar .bar_fill {
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-size: 1rem 1rem;
+  height: 16px;
+  margin-top: -14px;
+  transition: width .6s ease;
+}; 
+.masseffect .sheet-header .borderbox {
+  display: inline-block;
+  text-align: center;
+  width: 19%;
+} 
+.masseffect .sheet-header .invisiblebox {
+  background: transparent;
+  border: 0px;
+  height: 17px;
+  text-align: center;
+  width: 5px;
+} 
+.masseffect .sheet-header .invisibleinibox {
+  background: transparent;
+  border: 0px;
+  height: 17px;
+  padding: 1px;
+  text-align: center;
+  width: 45px;
+} 
+.masseffect .tabs {
+  flex: 0 0 20px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+.masseffect .tabs .item {
+  line-height: 20px;
+  font-weight: bold;
+}
+.masseffect .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.masseffect .sheet-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.masseffect .sheet-body .tab {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.masseffect .sheet-body .tab .lefttab {
+  width: 24%;
+  display: inline-block;
+  vertical-align: center;
+}
+.masseffect .sheet-body .tab .righttab {
+  width: 74%;
+  display: inline-block;
+}
+.masseffect .sheet-body .tab .righttab .spacedlabel {
+  margin-left: 15px;
+}
+.masseffect .sheet-body .tab .righttab .spacedbox {
+  border: 0px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  width: 95%;
+}
+.masseffect .sheet-body .tab .tentab {
+  width: 9%;
+  display: inline-block;
+}
+.masseffect .sheet-body .tab .quartertab {
+  width: 24%;
+  display: inline-block;
+}
+.masseffect .sheet-body .tab .thirtytab {
+  width: 29%;
+  display: inline-block;
+}
+.masseffect .sheet-body .tab .thirdtab {
+  display: inline-block;
+  vertical-align: top;
+  width: 32%;
+}
+
+.masseffect .sheet-body .tab .threequartertab {
+  width: 74%;
+  display: inline-block;
+}
+.masseffect .sheet-body .tab .background {
+  border: 0px;
+  text-align: center;
+}
+.masseffect .sheet-body .tab .inputfield {
+  border: 0px;
+  font-weight: bold;
+  text-align: center;
+  height: 17px;
+}
+.masseffect .sheet-body .tab .advantagefield {
+  border: 0px;
+  text-align: left;
+  height: 17px;
+  width: 90%;
+  padding-left: 10px;
+}
+.masseffect .sheet-body .tab .borderheadline {
+  border: 1px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+}
+.masseffect .sheet-body .tab .skilltableheadlarger {
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 18%;
+}
+.masseffect .sheet-body .tab .skilltablehead {
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 16%;
+}
+.masseffect .sheet-body .tab .skilltableheadshifted {
+  display: inline-block;
+  font-weight: bold;
+  padding-left: 7px;
+  text-align: left;
+  vertical-align: top;
+  width: 16%;
+}
+.masseffect .sheet-body .tab .skilltableheadsmaller {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  width: 10%;
+}
+.masseffect .sheet-body .tab .skilltableheadsmall {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  width: 5%;
+}
+.masseffect .sheet-body .tab .skilltablelarger {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  width: 18%;
+}
+.masseffect .sheet-body .tab .skilltable {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  width: 16%;
+}
+.masseffect .sheet-body .tab .skilltablecenter {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 16%;
+}
+.masseffect .sheet-body .tab .skilltablesmall {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 5%;
+}
+.masseffect .sheet-body .tab .skilltablesmaller {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 10%;
+}
+.masseffect .sheet-body .tab select.attributeselect {
+  border: none;
+  background: transparent;
+  height: 17px;
+  width: 90%;
+}
+.masseffect .sheet-body .tab input.invisiblebox {
+  background: transparent;
+  border: 0px;
+  height: 17px;
+  text-align: center;
+}
+.masseffect .sheet-body .tab input.invisibleboxsmall {
+  background: transparent;
+  border: 1px solid;
+  height: 17px;
+  padding: 0;
+  text-align: center;
+  width: 25%;
+}
+.masseffect .sheet-body .tab input.skillspecbox {
+  background: transparent;
+  border: 1px;
+  height: 13px;
+  padding: 0;
+  text-align: left;
+  width: 98%;
+}
+.masseffect .sheet-body .tab input.skillspecboxright {
+  background: transparent;
+  border: 1px;
+  height: 13px;
+  padding: 0;
+  text-align: right;
+  width: 98%;
+}
+.masseffect .sheet-body .tab .combattablehead {
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 20%;
+}
+.masseffect .sheet-body .tab .combattable {
+  display: inline-block; 
+  text-align: left;
+  vertical-align: middle;
+  width: 20%;
+}
+.masseffect .sheet-body .tab .combattableheadsmall {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  width: 15%;
+}
+.masseffect .sheet-body .tab .combattablesmall {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 15%;
+}
+.masseffect .sheet-body .tab .combattableheadlarge {
+  display: inline-block;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 25%;
+}
+.masseffect .sheet-body .tab .combattablelarge {
+  display: inline-block; 
+  text-align: left;
+  vertical-align: top;
+  width: 25%;
+}
+.masseffect .sheet-body .tab .weaponinputbox {
+  border: 0px;
+  height: 18px;
+  margin-bottom: 5px;
+  width: 95%;
+}
+.masseffect .sheet-body .tab .dicerollinputbox,
+.masseffect .sheet-body .tab .wgsinputbox {
+  border: 0px;
+  height: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 80%;
+}
+
+.masseffect .editor,
+.masseffect .editor-content {
+  padding: 5px;
+  height: 100%;
+  min-height: 100px;
+} 
+.masseffect.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.masseffect.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
+.masseffect .chatborder {
+  border-radius: 10px;
+  font-size: 13px;
+  margin: 3px;
+  padding: 3px;
+  text-align: center;
+  width: 100%;
+}
+.masseffect .headline{
+  background-color: #171614;
+  color: #f1f1f1;
+}
+.masseffect .blackred{
+  background-color: #171614;
+  color: #e61809;
+}
+.masseffect .blackblue{
+  background-color: #171614;
+  color: #0eb9fe;
+}
+.masseffect .dicefield {
+  display: inline-block;
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  width: 100%;
+}
+.masseffect .dice {
+  display: inline-block;
+}
+.masseffect .inidice {
+  display: inline-block;
+  text-align: center;
+}
+.masseffect .successes {
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  text-align: center;
+}
+.combat-control{
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+}
+.combat-create{
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+}
+.combat-cycle{
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+}
+/*.combat-header {
+  height: 50px;
+}*/
+.combat-headline{
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+.combat-headline .threequarters{
+  display: inline-block;
+  width: 75%;
+}
+.combat-settings{
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+}
+.defeated .combatant-control {
+  display:none;
+}
+div.combatant-control{
+  display: inline-block;
+  height: 48px;
+  width: 60%;
+}
+.combatant-controls {
+  line-height: 24px !important;
+}
+div.combatant-data{
+  display: inline-block;
+  height: 48px;
+  margin-left: -5px;
+  vertical-align: top;
+  width: 60%;
+}
+div.combatant-image{
+  display: inline-block;
+  height: 48px;
+  padding-right: 10px;
+  width: 48px;
+}
+img.combatant-image{
+  width: 48px;
+  height: 48px !important;
+}
+.combatant-initiative{
+  display: inline-block;
+  height: 48px;
+  text-align: center;
+  vertical-align: top;
+}
+div.combatant-name{
+  vertical-align: middle;
+  height: 24px;
+}
+.combatant-name h4 {
+  line-height: 24px !important;
+}
+.combatfooterwidth {
+  text-align: center;
+  width: 298px;
+}
+.combat-tracker { 
+  padding-top: 20px;
+}

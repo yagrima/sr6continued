@@ -1,0 +1,44 @@
+<!-- das ist das, was herauskommt, wenn man Rechtsklick Update Combatant macht-->
+<form>
+    <div class="form-group">
+        <label>Name</label>
+        <div class="form-fields">
+            <input type="text" name="name" value="{{actor.name }}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Bild</label>
+        <div class="form-fields">
+            {{filePicker target="img" type="image"}}
+            <input class="image" type="text" name="img" placeholder="path/image.png" value="{{img}}"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Tick</label>
+        <div class="form-fields">
+            <input type="number" name="initiative" value="{{ initiative }}" step="any" placeholder="131"/>
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label>Status</label>
+        <div class="form-fields">
+            <label class="checkbox">
+                <input type="checkbox" name="hidden" {{ checked hidden }}/>
+                Verborgen
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="defeated" {{ checked defeated }}/>
+                Besiegt
+            </label>
+        </div>
+    </div>
+
+    <footer>
+        <button type="submit" title="{{ title }}">
+            <i class="fas fa-save"></i> {{ title }}
+        </button>
+    </footer>
+</form>

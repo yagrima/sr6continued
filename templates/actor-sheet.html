@@ -1,0 +1,448 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header"> 
+        <div class="fullwidth">
+            <div class="progress">
+                <div class="statusbar">
+                    BARRIERE
+                    <div class="bar_fill" style="background-color: #0eb9fe; width: {{data.barrier.barrierpercent}}%;">
+                    </div>
+                </div>
+            </div>    
+            <input class="headboxsmall" type="number" name="system.barrier.value" value="{{data.barrier.value}}">
+            <input class="headboxsmall" type="number" name="system.barrier.max" value="{{data.barrier.max}}">
+            <a class="rollitem shielddamagetaken" title="take damage"><i class="fa-solid fa-burst"></i></a>
+            <a class="rollitem regeneratebarrier" title="regenerate barrier"><i class="fa-solid fa-shield-plus"></i></a>
+        </div>
+        <div class="fullwidthspacer">
+        </div>
+        <div class="fullwidth">
+            <div class="progress">
+                <div class="statusbar">
+                    LEBENSPUNKTE
+                    <div class="bar_fill" style="background-color: #e61809; width: {{data.health.healthpercent}}%;">
+                    </div>
+                </div>
+            </div>   
+            <input class="headboxsmall" type="number" name="system.health.value" value="{{data.health.value}}">
+            <input class="headboxsmall" type="number" name="system.health.max" value="{{data.health.max}}">
+            <a class="rollitem damagetaken" title="take damage w/o shield"><i class="fa-solid fa-droplet"></i></a>
+            <a class="rollitem healing" title="heal"><i class="fa-solid fa-kit-medical"></i></a>
+        </div>
+        <div class="fullwidthspacer">
+        </div>
+        <div class="fullwidth">
+            <div class="progress">
+                <div class="statusbar">
+                    ERSCHÖPFUNG
+                    <div class="bar_fill" style="background-color: #538898; width: {{data.exhaustion.exhaustionpercent}}%;">
+                    </div>
+                </div>
+            </div>   
+            <input class="headboxsmall" type="number" name="system.exhaustion.value" value="{{data.exhaustion.value}}">
+            <input class="headboxsmall" type="number" name="system.exhaustion.max" value="{{data.exhaustion.max}}"> 
+            <a class="rollitem exhaustion" title="exhaustion damage"><i class="fa-solid fa-face-exhaling"></i></a>
+            <a class="rollitem hide" title="heal"><i class="fa-solid fa-kit-medical"></i></a>
+        </div>
+        <div class="fullwidthspacer">
+        </div>
+        <br>
+        <div class="fullwidth">
+            <div class="progress">
+                <div class="statusbar">
+                    KRAFTPUNKTE
+                    <div class="bar_fill" style="background-color: #538898; width: {{data.power.powerpercent}}%;">
+                    </div>
+                </div>
+            </div>   
+            <input class="headboxsmall" type="number" name="system.power.value" value="{{data.power.value}}">
+            <input class="headboxsmall" type="number" name="system.power.max" value="{{data.power.max}}">
+            <a class="rollitem usepower" title="spend power points"><i class="fa-solid fa-bahai"></i></a>
+            <a class="rollitem replenishpower" title="regain power points"><i class="fa-solid fa-head-side-medical"></i></a>
+        </div>
+        <div class="fullwidth">
+            <div class="halftab">AUSRÜSTUNGSPUNKTE</div>
+            <div class="halftab"><hr></div>
+        </div> 
+        <div class="fullwidth">
+            <div class="halftab">KAMPFPOOL</div>
+            <div class="halftab"><hr></div>
+        </div>
+        <div class="fullwidth">
+            <a class="item generic-roll" title="roll">GENERISCHER WURF &nbsp; <i class="fas fa-dice-d6 faD20Stat"></i></a>
+        </div>
+        <div class="fullwidth">
+            <div class="borderbox">
+                ERINNERUNG<br>
+                <input class="invisiblebox" type="number" name="system.derivedAttributes.memory" value="{{data.derivedAttributes.memory}}">
+            </div>
+            <div class="borderbox">
+                HEBEN/TRAGEN<br>
+                <input class="invisiblebox" type="number" name="system.derivedAttributes.liftcarry" value="{{data.derivedAttributes.liftcarry}}">
+            </div>
+            <div class="borderbox">
+                EINSCHÄTZEN<br>
+                <input class="invisiblebox" type="number" name="system.derivedAttributes.composure" value="{{data.derivedAttributes.composure}}">
+            </div>
+            <div class="borderbox">
+                INITIATIVE<br>
+                <input class="invisibleinibox" type="text" name="system.derivedAttributes.initiative" value="{{data.derivedAttributes.initiative}}">
+            </div>
+            <div class="borderbox">
+                VERTEIDIGUNG<br>
+                <input class="invisiblebox" type="number" name="system.derivedAttributes.defense" value="{{data.derivedAttributes.defense}}">
+            </div>
+        </div>
+    </header>
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">KURZBIO</a>
+        <a class="item" data-tab="attributes">ALLGEMEINES</a>
+        <a class="item" data-tab="skills">FERTIGKEITEN</a>
+        <a class="item" data-tab="combat">KAMPF</a>
+        <a class="item" data-tab="items">AUSRÜSTUNG</a>        
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Biography Tab --}}
+        <div class="tab description" data-group="primary" data-tab="description">
+            <div class="lefttab">
+                <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="243" width="150" />
+            </div>
+            <div class="righttab">
+                <label class="spacedlabel" for="name">NAME</label>
+                <input class="spacedbox" name="name" type="text" value="{{actor.name}}" placeholder="Dein Charakter hat keinen Namen?" />
+                <label class="spacedlabel" for="race">SPEZIES</label>
+                <input class="spacedbox" name="system.bio.race" type="text" value="{{data.bio.race}}" placeholder="Welche Rasse hatten deine Eltern?" />
+                <label class="spacedlabel" for="origin">HERKUNFT</label>
+                <input class="spacedbox" name="system.bio.origin" type="text" value="{{data.bio.origin}}" placeholder="Wo wurdest du geboren?" />
+                <label class="spacedlabel" for="gender">ALTER</label>
+                <input class="spacedbox" name="system.bio.age" type="number" value="{{data.bio.age}}" placeholder="Wie lange machst du schon Probleme?"/>
+                <label class="spacedlabel" for="height">GRÖSSE UND GEWICHT</label>
+                <input class="spacedbox" name="system.bio.height" type="text" value="{{data.bio.height}}" placeholder=""/>
+            </div>
+            <div class="editortab">
+                CHARAKTERGESCHICHTE:
+                {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
+            </div>
+        </div>
+
+        {{!-- Attributes Tab --}}
+        <div class="tab description" data-group="primary" data-tab="attributes">
+            <!-- TODO: Attribute / Vorteile / Nachteile
+                Speziesmerkmale Allgemeine Talente Soziale Talente -->
+            <div class="thirdtab">
+                <div class="borderheadline">ATTRIBUTE</div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.dexterity.current">GESCHICK</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.dexterity.current" value="{{data.attributes.dexterity.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.body.current">KÖRPER</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.body.current" value="{{data.attributes.body.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.size.current">GRÖSSE</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.size.current" value="{{data.attributes.size.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.reflexes.current">REFLEXE</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.reflexes.current" value="{{data.attributes.reflexes.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.luck.current">GLÜCK</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.luck.current" value="{{data.attributes.luck.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.brains.current">KOGNITION</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.brains.current" value="{{data.attributes.brains.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.personality.current">PERSÖNLICHKEIT</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.personality.current" value="{{data.attributes.personality.current}}">
+                </div>
+                <hr class="lowmargin">
+                <div class="threequartertab">
+                    <label class="spacedlabel" for="system.attributes.tech.current">TECH</label>
+                </div>
+                <div class="quartertab">
+                    <input class="inputfield" type="number" name="system.attributes.tech.current" value="{{data.attributes.tech.current}}">
+                </div>
+            </div>
+            <div class="thirdtab">
+                <div class="borderheadline">VORTEILE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage1" value="{{data.advantages.other.advantage1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage2" value="{{data.advantages.other.advantage2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage3" value="{{data.advantages.other.advantage3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage4" value="{{data.advantages.other.advantage4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage5" value="{{data.advantages.other.advantage5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage6" value="{{data.advantages.other.advantage6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage7" value="{{data.advantages.other.advantage7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.advantages.other.advantage8" value="{{data.advantages.other.advantage8}}"/>
+            </div>
+            <div class="thirdtab">
+                <div class="borderheadline">NACHTEILE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage1" value="{{data.disadvantages.other.disadvantage1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage2" value="{{data.disadvantages.other.disadvantage2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage3" value="{{data.disadvantages.other.disadvantage3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage4" value="{{data.disadvantages.other.disadvantage4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage5" value="{{data.disadvantages.other.disadvantage5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage6" value="{{data.disadvantages.other.disadvantage6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage7" value="{{data.disadvantages.other.disadvantage7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.disadvantages.other.disadvantage8" value="{{data.disadvantages.other.disadvantage8}}"/>
+            </div>
+            <hr>
+            <div class="thirdtab">
+                <div class="borderheadline">TALENTE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent1" value="{{data.talents.talent1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent2" value="{{data.talents.talent2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent3" value="{{data.talents.talent3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent4" value="{{data.talents.talent4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent5" value="{{data.talents.talent5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent6" value="{{data.talents.talent6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent7" value="{{data.talents.talent7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.talents.talent8" value="{{data.talents.talent8}}"/>
+            </div>
+            <div class="thirdtab">
+                <div class="borderheadline">SOZIALE TALENTE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent1" value="{{data.socialtalents.combattalent1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent2" value="{{data.socialtalents.combattalent2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent3" value="{{data.socialtalents.combattalent3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent4" value="{{data.socialtalents.combattalent4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent5" value="{{data.socialtalents.combattalent5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent6" value="{{data.socialtalents.combattalent6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent7" value="{{data.socialtalents.combattalent7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.socialtalents.combattalent8" value="{{data.socialtalents.combattalent8}}"/>
+            </div>
+            <div class="thirdtab">
+                <div class="borderheadline">KRÄFTETALENTE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent1" value="{{data.powertalents.powertalent1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent2" value="{{data.powertalents.powertalent2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent3" value="{{data.powertalents.powertalent3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent4" value="{{data.powertalents.powertalent4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent5" value="{{data.powertalents.powertalent5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent6" value="{{data.powertalents.powertalent6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent7" value="{{data.powertalents.powertalent7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.powertalents.powertalent8" value="{{data.powertalents.powertalent8}}"/>
+            </div>
+            <hr>
+        </div>
+
+        {{!-- Skills Tab --}}
+        <div class="tab description" data-group="primary" data-tab="skills">
+            <div class="skilltableheadlarger">FERTIGKEIT</div>
+            <div class="skilltableheadshifted">PRIMÄR</div>
+            <div class="skilltableheadshifted">SEKUNDÄR</div>
+            <div class="skilltableheadsmaller">WERT</div>
+            <div class="skilltableheadsmaller">SPEZ.</div>
+            <div class="skilltableheadsmaller">BONI</div>
+            <div class="skilltableheadsmaller">WÜRFELPOOL</div>
+            <hr class="lowmargin">
+            
+            {{#each masseffect.skillslong as |skillname skilltype|}}
+                <div class="skilltablelarger">{{localize skillname}}</div>
+                <div class="skilltable">
+                    <select class="attributeselect" name="{{concat 'system.skills.' skilltype '.primary'}}" value="{{getSkillInfo ../data.skills skilltype 'primary'}}">
+                        {{#select (concat '../data.skills.' skilltype '.primary')}}
+                            {{#each ../masseffect.attributes as |name type|}}
+                                <!-- Achtung, Krebs in Codeform, bitte wegschauen, TODO! Danke trotzdem an Maron!-->
+                                <option value="{{type}}" {{#if (equals type (getSkillInfo ../../data.skills skilltype 'primary'))}}selected{{/if}}>{{localize name}}</option>
+                            {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+                <div class="skilltable">
+                    <select class="attributeselect" name="{{concat 'system.skills.' skilltype '.secondary'}}" value="{{getSkillInfo ../data.skills skilltype 'secondary'}}">
+                        {{#select (concat '../data.skills.' skilltype '.secondary')}}
+                            {{#each ../masseffect.attributes as |name type|}}
+                              <option value="{{type}}" {{#if (equals type (getSkillInfo ../../data.skills skilltype 'secondary'))}}selected{{/if}}>{{localize name}}</option>
+                            {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+                <div class="skilltablesmaller">
+                    <input class="invisiblebox" type="number" name="{{concat 'system.skills.' skilltype '.value'}}" value="{{getSkillInfo ../data.skills skilltype 'value'}}"> 
+                </div>
+                <div class="skilltablesmaller">
+                    <input class="skillspecbox" type="text" name="{{concat 'system.skills.' skilltype '.specialisation1'}}" value="{{getSkillInfo ../data.skills skilltype 'specialisation1'}}" placeholder="KEINE" />
+                    <input class="skillspecboxright" type="text" name="{{concat 'system.skills.' skilltype '.specialisation2'}}" value="{{getSkillInfo ../data.skills skilltype 'specialisation2'}}" placeholder="KEINE" />
+                </div>
+                <div class="skilltablesmaller">
+                    <input class="invisibleboxsmall" type="number" name="{{concat 'system.skills.' skilltype '.bonusnormal'}}" value="{{getSkillInfo ../data.skills skilltype 'bonusnormal'}}">
+                    <input class="invisibleboxsmall" type="number" name="{{concat 'system.skills.' skilltype '.bonuswild'}}" value="{{getSkillInfo ../data.skills skilltype 'bonuswild'}}">
+                </div>
+                <div class="skilltable">
+                    <input class="invisibleboxsmall" type="number" name="{{concat 'system.skills.' skilltype '.dicepoolnormal'}}" value="{{getSkillInfo ../data.skills skilltype 'dicepoolnormal'}}">
+                    <input class="invisibleboxsmall" type="number" name="{{concat 'system.skills.' skilltype '.dicepoolwild'}}" value="{{getSkillInfo ../data.skills skilltype 'dicepoolwild'}}">&nbsp;
+                    <a class="rollitem skill-roll" title="{{skilltype}}" data-name="{{skilltype}}" data-normaldice="{{getSkillInfo ../data.skills skilltype 'dicepoolnormal'}}" data-wilddice="{{getSkillInfo ../data.skills skilltype 'dicepoolwild'}}"><i class="fas fa-dice-d6 faD6Stat"></i></a>
+                </div>
+                <hr class="lowmargin">
+            {{/each}}
+        </div>
+
+        {{!-- Combat Tab --}} <!-- Angriffsfenster [Name, Schadenscode, KWG/WGS, Merkmale] -->
+        <div class="tab description" data-group="primary" data-tab="combat">
+            <div class="combattablehead">ANGRIFF</div>
+            <div class="combattableheadsmall">SCHADEN</div>
+            <div class="combattableheadsmall">WGS/KWG</div>
+            <div class="combattablehead">WÜRFELPOOL</div>
+            <div class="combattableheadlarge">MERKMALE</div>
+            <hr class="lowmargin">
+                <div class="combattable"> 
+                    <input class="weaponinputbox" type="text" name="system.weapons.weapon1.name" value="{{data.weapons.weapon1.name}}" placeholder="wirklich kein Angriff?" />
+                </div> 
+                <div class="combattablesmall">
+                    <input class="dicerollinputbox" type="text" name="system.weapons.weapon1.damagecode" value="{{data.weapons.weapon1.damagecode}}" placeholder="2W6" />
+                </div>
+                <div class="combattablesmall">
+                    <input class="wgsinputbox" type="number" name="system.weapons.weapon1.wgskwg" value="{{data.weapons.weapon1.wgskwg}}" placeholder="42" />
+                </div>
+                <div class="combattable">
+                    <input class="invisibleboxsmall" type="number" name="system.weapons.weapon1.normal" value="{{data.weapons.weapon1.normal}}" placeholder="0"/>
+                    {{log data.weapon}}
+                    <input class="invisibleboxsmall" type="number" name="system.weapons.weapon1.wild" value="{{data.weapons.weapon1.wild}}" placeholder="0"/>&nbsp;
+                    <a class="rollitem attack-roll" title="Angriff" data-dcode="{{data.weapons.weapon1.damagecode}}" data-wgs="{{data.weapons.weapon1.wgskwg}}" data-name="{{data.weapons.weapon1.name}}" data-normaldice="{{data.weapons.weapon1.normal}}" data-wilddice="{{data.weapons.weapon1.wild}}" data-attributes="{{data.weapons.weapon1.attributes}}"><i class="fas fa-dice-d6 faD6Stat"></i></a>
+                </div>
+                <div class="combattablelarge">
+                    <input class="weaponinputbox" type="text" name="system.weapons.weapon1.attributes" value="{{data.weapons.weapon1.attributes}}" placeholder="Scharf, Exakt usw.?" />
+                </div>
+            <hr class="lowmargin">
+            <div class="thirdtab">
+                <div class="borderheadline">KAMPFTALENTE</div>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent1" value="{{data.combattalents.combattalent1}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent2" value="{{data.combattalents.combattalent2}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent3" value="{{data.combattalents.combattalent3}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent4" value="{{data.combattalents.combattalent4}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent5" value="{{data.combattalents.combattalent5}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent6" value="{{data.combattalents.combattalent6}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent7" value="{{data.combattalents.combattalent7}}"/>
+                <hr class="lowmargin">
+                <input class="advantagefield" type="text" name="system.combattalents.combattalent8" value="{{data.combattalents.combattalent8}}"/>
+            </div>
+        </div>
+
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <ol class="item-list">
+                {{#each data.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
+                    <div class="item-buttons">
+                        {{#each item.system.attributes as |itemAttr key|}}
+                        {{#if itemAttr.dtype}}
+                            {{#if itemAttr.isFormula}}
+                                {{!-- Use the items.name.key format for shorthand. --}}
+                                {{#if ../../shorthand}}
+                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                {{else}}
+                                <button class="item-button rollable"
+                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
+                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                {{/if}}
+                            {{/if}}
+                        {{else}}
+                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
+                                {{#if itemGroupedAttr.isFormula}}
+                                    {{!-- Use the items.name.key format for shorthand. --}}
+                                    {{#if ../../../shorthand}}
+                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                    {{else}}
+                                    <button class="item-button rollable"
+                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
+                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    {{/if}}
+                                {{/if}}
+                            {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control" title="{{ localize "SIMPLE.ItemEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control" title="{{ localize "SIMPLE.ItemDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+            <p>
+                <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
+            </p>
+        </div>
+    </section>
+</form>

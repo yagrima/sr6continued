@@ -1,0 +1,833 @@
+{
+  "Actor": {
+    "types": ["character","goon","summon","vehicle","host","item","spell","adeptpower","rweapon","mweapon"],
+    "templates": {
+      "attribute-template": {
+        "attributes": {
+          "bod": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "agi": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "rea": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "str": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "wil": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "log": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "int": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "cha": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "mag": {
+            "active": false,
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "res": {
+            "active": false,
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "edg": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          },
+          "essence": {
+            "base": 2,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 2
+          }
+        },
+      "metatype": "human",
+      "type": "mundane",
+      "gender": ""
+      },
+      "derived-template": {
+        "derived": {
+          "composure": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "judge_intentions": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "memory": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "lift_carry": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "initiative": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "astral_initiative": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "matrix_initiative_cold": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "matrix_initiative_hot": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          }
+        }
+      },
+      "defenserating-template": {
+        "defenserating": {
+          "physical": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "matrix": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "vehicle": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "astral": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "social": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          }
+        }
+      },
+      "attackrating-template": {
+        "attackrating": {
+          "physical": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "astral": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "matrix": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "vehicle": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          },
+          "social": {
+            "base": 0,
+            "bonus": 0, 
+            "malus": 0, 
+            "total": 0
+          }
+        }
+      },
+      "resist-template": {
+        "defensepool": {
+          "physical": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "astral": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "spells_direct": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "spells_indirect": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "spells_other": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "vehicle": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "toxin": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "damage_physical": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          },
+          "damage_astral": {
+            "base": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "total": 0
+          }
+        }
+      },
+      "monitor-template": {
+        "physical": {
+          "base": 0,
+          "bonus": 0, 
+          "malus": 0, 
+          "total": 0,
+          "max": 25
+        },
+        "stun": {
+          "base": 0,
+          "bonus": 0, 
+          "malus": 0, 
+          "total": 0,
+          "max": 25
+        },
+        "overflow": {
+          "base": 0,
+          "bonus": 0, 
+          "malus": 0, 
+          "total": 0,
+          "max": 50
+        } 
+      },
+      "movement-template": {
+        "walk": 10,
+        "sprint": 15,
+        "perHit": 1
+      },
+      "skill-template": {
+        "skills": {
+          "astral": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "athletics": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "biotech": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "close_combat": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "con": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "conjuring": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "cracking": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "electronics": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "enchanting": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "engineering": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "exotic_weapons": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "firearms": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "influence": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "outdoors": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "perception": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "piloting": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "sorcery": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "stealth": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          },
+          "tasking": {
+            "rank": 0,
+            "bonus": 0,
+            "dicebonus": 0,
+            "malus": 0,
+            "dicemalus": 0,
+            "specialisation": "",
+            "specbonus": 0,
+            "expertise": "",
+            "expbonus": 0,
+            "total": 0 
+          }
+        }
+      },
+      "magic-template": {
+        "tradition": {
+          "genesisID": "",
+          "name": "",
+          "attribute": "log"
+        }
+      }
+    },
+    "character": {
+      "name": "",
+      "templates": [
+        "attribute-template",
+        "derived-template",
+        "defenserating-template",
+        "attackrating-template",
+        "resist-template",
+        "monitor-template",
+        "movement-template",
+        "skill-template",
+        "magic-template"
+      ],
+      "characterisation": [],
+      "nuyen": 0,
+      "karma": 0,
+      "overwatch": 0,
+      "notes": "You can enter your notes here.",
+      "heat": 0,
+      "reputation": 0,
+      "qual_positive": [],
+      "qual_negative": [],
+      "languages": [{"name":"English","level":"N"}],
+      "knowledge": [],
+      "connections":[]
+    },
+    "goon": {
+      "name": "",
+      "templates": [
+        "attribute-template",
+        "derived-template",
+        "defenserating-template",
+        "attackrating-template",
+        "resist-template", 
+        "movement-template",
+        "skill-template",
+        "magic-template"
+      ],
+      "qual_positive": [],
+      "qual_negative": [],
+      "languages": [{"name":"English","level":"N"}],
+      "knowledge": []
+    },
+    "summon": {
+      "name": "",
+      "templates": [
+        "attribute-template",
+        "derived-template",
+        "defenserating-template",
+        "attackrating-template",
+        "resist-template", 
+        "movement-template",
+        "skill-template",
+        "magic-template"
+      ]
+    },
+    "vehicle": {
+      "name": ""
+    },
+    "host": {
+      "name": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "adeptpower",
+      "complex_form",
+      "contact",
+      "critterpower",
+      "echo",
+      "focus",
+      "gear",
+      "lifestyle",
+      "martialartstyle",
+      "martialarttech",
+      "meleeweapon",
+      "metamagic",
+      "quality",
+      "rangeweapon",
+      "ritual",
+      "sin",
+      "skill",
+      "spell",
+      "software"
+    ],
+    "templates": {
+      "genesis": {
+        "genesisID": "",
+        "description": ""
+      }
+    },
+    "adeptpower": {
+      "templates": ["genesis"],
+      "activation": "",
+      "choice": "",
+      "cost": 0.0,
+      "hasLevel": false,
+      "level": 0
+    },
+    "complex_form": {
+      "templates": ["genesis"],
+      "attribute": "res",
+      "skill": "electronics",
+      "fading": 0,
+      "threshold": 0,
+      "opposedAttribute1": "",
+      "opposedAttribute2": ""
+    },
+    "contact": {
+      "templates": ["genesis"],
+      "description": "",
+      "favorpoints": 0,
+      "loyalty": 1,
+      "name": "Please, give me a name!",
+      "rating": 1,
+      "types":[]
+    },
+    "critterpower": {
+      "templates": ["genesis"],
+      "action": "Ma",
+      "duration": "I",
+      "range": "S",
+      "type": "P"
+    },
+    "echo": {
+      "templates": ["genesis"],
+      "description": "",
+      "name": ""
+    },
+    "focus": {
+      "templates": ["genesis"],
+      "rating": 1
+    },
+    "gear": {
+      "templates": ["genesis"], 
+      "description": "",
+      "hasRating": false,
+      "name": "",
+      "quantity": 1,
+      "rating": 1
+    },
+    "lifestyle": {
+      "templates": ["genesis"],
+      "comforts": 1,
+      "cost": 500,
+      "isSimple": true,
+      "neighborhood": 1,
+      "paidmonths": 0,
+      "qual_negative": [],
+      "qual_positive": [],
+      "security": 1,
+      "sin": "",
+      "space": 1
+    },
+    "martialartsstyle": {
+      "templates": ["genesis"],
+      "category": {
+        "grappling": false,
+        "mobility": false,
+        "ranged": false,
+        "striking": false,
+        "weapon": false
+      }
+    },
+    "martialartstech": {
+      "templates": ["genesis"],
+      "choice": "",
+      "style": ""
+    },
+    "mweapon": {
+      "templates": ["genesis"],
+      "name": "",
+      "damage": 0,
+      "damagetype": "P",
+      "attack": 0
+    } ,
+    "metamagic": {
+      "templates": ["genesis"],
+      "description": "",
+      "hasLevel": false,
+      "isAdept": false,
+      "isMage": false,
+      "level": 0,
+      "name": ""
+    },
+    "quality": {
+      "templates": ["genesis"],
+      "description": "",
+      "hasLevel": false,
+      "isPositive": false,
+      "level": 0,
+      "name": ""
+    },
+    "rweapon": {
+      "name": "",
+      "damage": 0,
+      "damagetype": "P",
+      "attack1": 0,
+      "attack2": 0,
+      "attack3": 0,
+      "attack4": 0,
+      "attack5": 0
+    },
+    "ritual": {
+      "templates": ["genesis"],
+      "features": {
+        "isAnchored": false,
+        "isMinion": false,
+        "isSpell": false,
+        "reqMaterialLink": false,
+        "reqSpotter": false
+      },
+      "name": "",
+      "threshold": 2
+    },
+    "sin": {
+      "templates": ["genesis"],
+      "description": "",
+      "name": "John Doe",
+      "quality": "6"
+    },
+    "software": {
+      "templates": ["genesis"],
+      "description": "",
+      "hasRating": false,
+      "rating": 0,
+      "subtype": "Autosoft"
+    },
+    "spell": {
+      "templates": ["genesis"],
+      "category": "",
+      "damage": 0,
+      "damagetype": "P",
+      "drain": "",
+      "duration": "",
+      "isAlchemy": false,
+      "isEssence": false,
+      "isOpposed": false,
+      "name": "",
+      "range": "",
+      "type": ""
+    }
+  }
+}

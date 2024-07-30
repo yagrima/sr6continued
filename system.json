@@ -1,0 +1,39 @@
+{
+    "id": "shadowrun6continued",
+    "version": "0.1",
+    "title": "Shadowrun 6th Edition",
+    "url": "https://github.com/yagrima/shadowrun6continued",
+    "description": "An attempt to return Shadowrun 6th edition to Foundry VTT",
+    "license": "LICENSE.txt",
+    "authors": [
+        {
+            "name": "Yagrima",
+            "email": "rene.matis89@gmail.com",
+            "discord": "182152404471382016",
+            "flags": {}
+        }
+    ],
+    "esmodules": [
+        "module/simple.js"
+    ],
+    "styles": [
+        "styles/simple.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json",
+            "flags": {}
+        }
+    ],
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12.315",
+        "maximum": "14"
+    }, 
+    "primaryTokenAttribute": "physical",
+    "secondaryTokenAttribute": "stun",
+    "manifest": "https://github.com/yagrima/shadowrun6continued/releases/latest/download/system.json",
+    "download": "https://github.com/yagrima/shadowrun6continued/releases/download/v0.1/system.zip"
+}
