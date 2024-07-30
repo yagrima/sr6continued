@@ -39,18 +39,19 @@ export class SimpleActorSheet extends ActorSheet {
     sheetData.config = CONFIG;
     sheetData.isGM = game.user.isGM;
     sheetData.masseffect = masseffect;
-    /*calculate derived attributes*/
+  }
+    /*calculate derived attributes
     let attributes = sheetData.data.attributes;
     let derived = sheetData.data.derivedAttributes;
     derived.memory = Math.round(attributes.brains.current + attributes.tech.current + attributes.luck.current/2);
     derived.liftcarry = Math.round(attributes.body.current + attributes.size.current + attributes.luck.current/2);
     derived.composure = Math.round(attributes.brains.current + attributes.personality.current + attributes.luck.current/2);
-    this._calculateResourcePercentages(sheetData);
-    /*initiative calculation, check for several (dis)advantages and talents*/
+    this._calculateResourcePercentages(sheetData);*/
+    /*initiative calculation, check for several (dis)advantages and talents
     derived.initiative = this._calculateInitiative(sheetData);
     CONFIG.Combat.initiative = derived.initiative;
-    derived.defense = this._calculateDefense(sheetData);
-    /*skills*/
+    derived.defense = this._calculateDefense(sheetData);*/
+    /*skills
     this._calculateSkillpools(sheetData);
     return sheetData;
   }
@@ -66,8 +67,8 @@ export class SimpleActorSheet extends ActorSheet {
       sheetData.data.skills[a].dicepoolwild =sheetData.data.skills[a].bonuswild;
     }
     return true;
-  }
-  _calculateAttributeNumber(sheetData,attributeString){ 
+  }*/
+  /*_calculateAttributeNumber(sheetData,attributeString){ 
     return sheetData.data.attributes[attributeString].current;
   }
   _calculateDefense(sheetData) {
@@ -105,9 +106,9 @@ export class SimpleActorSheet extends ActorSheet {
   }
   activateListeners(html) {
     super.activateListeners(html);
-    if(this.actor.isOwner){}
+    if(this.actor.isOwner){}*/
     /* check the rest if sheet is editable */
-    if(!this.isEditable) return;  
+    /*if(!this.isEditable) return;  
     // bei Auslagerung in eine fremde Klasse reicht es nicht das Event (this) mitzugeben, sondern wir brauchen 
     // auch die Informationen des Actors this.getData()
     html.find(".shielddamagetaken").click(Listener.onShieldDamgeTaken.bind(this,this.getData()));
@@ -123,5 +124,5 @@ export class SimpleActorSheet extends ActorSheet {
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
     return formData;
-  }
+  }*/
 }
