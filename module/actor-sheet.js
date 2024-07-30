@@ -13,7 +13,7 @@ export class SimpleActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["masseffect", "sheet", "actor"],
-      template: "systems/shadowrun6continued/templates/actor-sheet.html",
+      template: "systems/sr6continued/templates/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
@@ -40,6 +40,7 @@ export class SimpleActorSheet extends ActorSheet {
     sheetData.isGM = game.user.isGM;
     sheetData.masseffect = masseffect;
   }
+}
     /*calculate derived attributes
     let attributes = sheetData.data.attributes;
     let derived = sheetData.data.derivedAttributes;
@@ -125,4 +126,4 @@ export class SimpleActorSheet extends ActorSheet {
     let formData = super._getSubmitData(updateData);
     return formData;
   }*/
-}
+
