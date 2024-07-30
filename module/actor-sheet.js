@@ -8,7 +8,7 @@ import {masseffect} from "./library.js";
  * @extends {ActorSheet}
  */
 export class SimpleActorSheet extends ActorSheet {
-
+  console.log("#1");
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -21,6 +21,7 @@ export class SimpleActorSheet extends ActorSheet {
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
+  console.log("#2");
   getData(options) {
     const basedata = super.getData(options);
     let sheetData = {};
