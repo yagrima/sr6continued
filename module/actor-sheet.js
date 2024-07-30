@@ -21,13 +21,6 @@ export class SimpleActorSheet extends ActorSheet {
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
-
-  /* -------------------------------------------- */
-
-  /** @inheritdoc 
-   * https://foundryvtt.wiki/en/migrations/foundry-core-0_8_x
-   * https://foundryvtt.wiki/en/migrations/foundry-core-v10
-  */
   getData(options) {
     const basedata = super.getData(options);
     let sheetData = {};
@@ -41,6 +34,13 @@ export class SimpleActorSheet extends ActorSheet {
     sheetData.masseffect = masseffect;
   }
 }
+  /* -------------------------------------------- */
+
+  /** @inheritdoc 
+   * https://foundryvtt.wiki/en/migrations/foundry-core-0_8_x
+   * https://foundryvtt.wiki/en/migrations/foundry-core-v10
+  */
+
     /*calculate derived attributes
     let attributes = sheetData.data.attributes;
     let derived = sheetData.data.derivedAttributes;
