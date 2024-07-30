@@ -3,25 +3,22 @@ import * as Initiative from "./initiative.js";
 import * as Listener from "./listener.js";
 import {masseffect} from "./library.js";  
 
-/**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
- */
-export class SimpleActorSheet extends ActorSheet {
-  console.log("#1");
-  /** @inheritdoc */
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["masseffect", "sheet", "actor"],
-      template: "systems/sr6continued/templates/actor-sheet.html",
-      width: 600,
-      height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [ ".attributes", ".items",".biography"],
-      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
+export default class PlayerCharakterSheet extends ActorSheet {
+  sheet = {};
+  /*create the empty sheet*/
+  static get defaultOptions(){
+    return foundry.utils.mergeObject(super.defaultOptions,{
+      template: "system/sr6continued/templates/actor-sheet.html",
+      width: 632,
+      height: 825,
+      resizeable: false,
+      tabs: [{
+        navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"
+      }],
+      /* CSS classes*/
+      classes: ["shadowrun","sheet","scsheet"]
     });
-  }
-  console.log("#2");
+  } 
   getData(options) {
     const basedata = super.getData(options);
     let sheetData = {};
